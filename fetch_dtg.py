@@ -9,7 +9,7 @@ app = FastAPI()
 handler = Mangum(app)
 
 
-client = pymongo.MongoClient("mongodb://adcDb!0917:adcDb!0038@10.253.5.205:27017/adc")
+client = pymongo.MongoClient(host=os.environ.get("FMS_URI"))
 db = client['adc']
 dtg_data = db['fleet_data']
 
